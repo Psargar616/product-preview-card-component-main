@@ -1,0 +1,144 @@
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* general stylying */
+
+
+  body{
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 500;
+    font-size: 14px;
+    color: hsl(228, 12%, 48%);
+    background-color: hsl(30, 38%, 92%);
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    margin: 1rem;
+  }
+
+  .flex-grp{
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .product{
+    display: grid;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+  }
+  @media(min-width:600px){
+    .product{
+        padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .content{
+    display: grid;
+    gap:1rem;
+    padding: 1.5rem;
+
+  }
+
+  .prod-category{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: small;
+  }
+
+  .prod-title{
+    color: black;
+    font-size: 2rem;
+    font-family: 'Fraunces', serif;
+    line-height: 1.1;
+
+
+  }
+
+  .new-price{
+    font-size: 2rem;
+    font-family: 'Fraunces', serif;
+    color:hsl(158, 36%, 37%);
+
+  }
+
+  /* button styling */
+  .btn{
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    padding: 0.75em 1.5em;
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+
+
+  }
+
+  .btn:is(:hover, :focus){
+    background-color:hsl(158, 36%, 17%) ;
+  }
+
+  /* to add icon used data-icon */
+  .btn[data-icon="shopping-cart"]::before{
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(images/icon-cart.svg);
+  }
